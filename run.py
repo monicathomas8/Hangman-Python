@@ -21,10 +21,10 @@ alphabet_lower = [
     'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
 
+
 def get_alphabet_uppercase_letters(letters):
     # Convert the list to uppercase
     uppercase_alphabet = [letter.upper() for letter in letters]
-
     # Print the list of uppercase letters
     print(uppercase_alphabet)
     return uppercase_alphabet
@@ -41,8 +41,8 @@ def get_valid_word(words):
 def hangman():
     word = get_valid_word(dog_breeds)
     print(word)
-    word_letters = set(word)  
-    print(word_letters)# letters in the word
+    word_letters = set(word)
+    print(word_letters)  # letters in the word
     alphabet = get_alphabet_uppercase_letters(alphabet_lower)
     used_letters = set()  # what the user has guessed
 
@@ -52,10 +52,13 @@ def hangman():
     while len(word_letters) > 0 and lives > 0:
         # letters used
         # ' '.join(['a', 'b', 'cd']) --> 'a b cd'
-        print('You have', lives, 'lives left and you have used these letters: ', ' '.join(used_letters))
+        print
+        ('You have', lives, 'lives left and you have used these letters: ', ' '
+         .join(used_letters))
 
         # what current word is (ie W - R D)
-        word_list = [letter if letter in used_letters else '-' for letter in word]
+        word_list = [letter if letter in used_letters else '-' for
+                     letter in word]
         print(lives_visual_dict[lives])
         print('Current word: ', ' '.join(word_list))
 
